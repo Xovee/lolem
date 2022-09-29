@@ -1,2 +1,1 @@
-# lolem
-League of Legends E-sports Manager Helper
+# League of Legends E-Sports Manager Helper
