@@ -1,5 +1,8 @@
 {
-  "音乐": ["Xiaohu", "TheShy", "Lwx"], 
-  "周边": ["Xiaohu", "Scout", "Meiko"], 
-  "饮食": ["Ming", "Rookie", "Zoom", "Doinb"]
+  "音乐": ["Xiaohu", "TheShy", "Lwx", "Elk", "JackeyLove", "Flandre", "GALA", "Fzzy", "LoveLing", "Jiejie", "Leyan", "Cryin", "ShowMaker", "Jankos"], 
+  "周边": ["Xiaohu", "Scout", "Meiko", "knight", "iBoy", "Fzzy", "WeiXiao", "Cool", "Ning", "Karsa", "Peanut", "caPs"], 
+  "饮食": ["Ming", "Rookie", "Zoom", "Doinb", "Elk", "xiye", "Cool", "Karsa", "Wei", "Cryin", "Faker", "Deft"],
+  "外设": ["Ming", "Zoom", "Doinb", "369", "knight", "Crisp", "Uzi", "Gogoing", "Bin", "LoveLing", "Ning", "Wei", "Uzi", "Faker", "caPs"], 
+  "阅读": ["Scout", "369", "iBoy", "JackeyLove", "WeiXiao", "Jiejie", "Leyan", "Peanut"], 
+  "养生": ["Meiko", "TheShy", "Rookie", "Lwx", "Crisp", "Flandre", "GALA", "Uzi", "Gogoing", "xiye", "Bin", "Uzi", "ShowMaker", "Deft", "Jankos"]
 }

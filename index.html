@@ -17,14 +17,15 @@
         <div class='nav-left'>
             <!-- <a class='brand' href='#'>Xovee</a> -->
             <div class='tabs'>
-                <a class='active'>送礼</a>
-                <a>招聘</a>
+                <a id='recruit-'>招聘</a>
+                <a id='gift-'>送礼</a>
             </div>
         </div>
     </nav>
     
     <hr>
-
+    <!-- Start of Gift -->
+    <div id='gift-content' class='content-section'>
     <div class='row'>
         <div class='col-12 gift-list'>
             <a class='button'>音乐</a>
@@ -40,18 +41,71 @@
 
     <div class='row'>
         <div class='col-12 player-list'>
+            <a class='button primary outline'>369</a>
+            <a class='button primary outline'>Bin</a>
+            <a class='button primary outline'>caPs</a>
+            <a class='button primary outline'>Cool</a>
+            <a class='button primary outline'>Crisp</a>
+            <a class='button primary outline'>Cryin</a>
+            <a class='button primary outline'>Deft</a>
             <a class='button primary outline'>Doinb</a>
+            <a class='button primary outline'>Flandre</a>
+            <a class='button primary outline'>Fzzf</a>
+            <a class='button primary outline'>Elk</a>
+            <a class='button primary outline'>Faker</a>
+            <a class='button primary outline'>GALA</a>
+            <a class='button primary outline'>Gogoing</a>
+            <a class='button primary outline'>iBoy</a>
+            <a class='button primary outline'>Jankos</a>
+            <a class='button primary outline'>Jiejie</a>
+            <a class='button primary outline'>Karsa</a>
+            <a class='button primary outline'>knight</a>
+            <a class='button primary outline'>Leyan</a>
+            <a class='button primary outline'>LoveLing</a>
             <a class='button primary outline'>Lwx</a>
             <a class='button primary outline'>Meiko</a>
             <a class='button primary outline'>Ming</a>
+            <a class='button primary outline'>Ning</a>
+            <a class='button primary outline'>Peanut</a>
             <a class='button primary outline'>Rookie</a>
             <a class='button primary outline'>Scout</a>
+            <a class='button primary outline'>ShowMaker</a>
             <a class='button primary outline'>TheShy</a>
+            <a class='button primary outline'>Uzi</a>
+            <a class='button primary outline'>Wei</a>
+            <a class='button primary outline'>WeiXiao</a>
             <a class='button primary outline'>Xiaohu</a>
+            <a class='button primary outline'>xiye</a>
             <a class='button primary outline'>Zoom</a>
+            <!-- 教练 & 助理 -->
+            <a class='button primary outline'>余霜</a>
+            <a class='button primary outline'>王多多</a>
+            <a class='button primary outline'>骆歆</a>
+            <a class='button primary outline'>阿布</a>
+            <a class='button primary outline'>牛排</a>
+            <a class='button primary outline'>Tabe</a>
+            <a class='button primary outline'>米勒</a>
+            <a class='button primary outline'>记得</a>
+            <a class='button primary outline'>刘航</a>
+            <a class='button primary outline'>maokai</a>
+            <a class='button primary outline'>小钰</a>
+            <a class='button primary outline'>鼓鼓</a>
+            <a class='button primary outline'>娃娃</a>
+            <a class='button primary outline'>希然</a>
+            <a class='button primary outline'>Rita</a>
+            <a class='button primary outline'>管泽元</a>
+            <a class='button primary outline'>瞳夕</a>
+            <a class='button primary outline'>俊日</a>
+            <a class='button primary outline'>957</a>
+            <a class='button primary outline'>苏小洛</a>
+            <a class='button primary outline'>夏安</a>
+            <a class='button primary outline'>朱开</a>
+            <a class='button primary outline'>金星宇</a>
             
         </div>
     </div>
+    </div> 
+    <!-- End of Gift -->
 
     <footer class='card'>
         <header>
@@ -60,41 +114,6 @@
         <p>是这个网站的创建者和维护者，如果你有任何意见或者发现了任何错误，可以发邮件到<code>xovee at live.com</code></p>
     </footer>
 
-<script>
-    $( document ).ready(function() {
-        var gift = {
-            "音乐": ["Xiaohu", "TheShy", "Lwx"], 
-            "周边": ["Xiaohu", "Scout", "Meiko"], 
-            "饮食": ["Ming", "Rookie", "Zoom", "Doinb"]
-        };
-
-        $(".player-list a").each(function(index, element) {
-            $(this).hide();
-        });
-
-        $('.gift-list a').click(function(index, element) {
-            $('.player-list a').each(function() {$(this).hide()});
-            $('.gift-list a').each(function() {$(this).removeClass('primary')});
-            $(this).addClass('primary');
-            var currentGift = $(this).text();
-            console.log(currentGift);
-            $.each(gift[currentGift], function(index, value) {
-                $('.player-list a').each(function() {
-                    if ($(this).text() == value) {
-                        $(this).show();
-                    }
-                });
-            });
-
-        })
-
-        // $.getJSON('./data/gift.json', function(data) {
-        //     const gift = JSON.stringify(data);
-        //     alert(gift['音乐']);
-        // });
-        // alert(gift['音乐']);
-        console.log(gift['音乐']);
-    });
-</script>
+<script src='./js/index.js'></script>
 </body>
 </html>
