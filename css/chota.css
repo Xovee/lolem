@@ -524,8 +524,8 @@ select {
 [type="reset"],
 [type="submit"],
 button {
-  padding: 1rem 1rem;
-  margin: 1rem 0;
+  padding: .6rem .7rem;
+  margin: .4rem .5rem .4rem 0;
   color: var(--color-darkGrey);
   background: var(--color-lightGrey);
   border-radius: 4px;
@@ -561,7 +561,7 @@ button {
   border-radius:0 4px 4px 0 !important;
 }
 .button + .button {
-  margin-left: .5rem;
+  margin-right: .5rem;
 }
 .button:hover,
 [type="button"]:hover,
