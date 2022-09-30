@@ -1,0 +1,9 @@
+@import url(chota.css)
+
+:root {
+    --color-primary: #blue;
+}
+
+nav {
+    margin-bottom: 2rem;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang='zh'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>英雄联盟电竞经理助手 - Xovee</title>
+    <link rel='stylesheet' href='./css/style.css'>
+    <link rel='stylesheet' href='./css/chota.css'>
+
+    <script src='./js/jquery-3.6.1.min.js'></script>
+    <script src='./js/index.js'></script>
+</head>
+
+<body class='container'>
+    <h1 class='is-center'>英雄联盟电竞经理助手</h1>
+    <nav class='nav'>
+        <div class='nav-left'>
+            <!-- <a class='brand' href='#'>Xovee</a> -->
+            <div class='tabs'>
+                <a class='active'>送礼</a>
+                <a>招聘</a>
+            </div>
+        </div>
+    </nav>
+    
+    <hr>
+
+    <div class='row'>
+        <div class='col-12 gift-list'>
+            <a class='button'>音乐</a>
+            <a class='button'>周边</a>
+            <a class='button'>外设</a>
+            <a class='button'>饮食</a>
+            <a class='button'>阅读</a>
+            <a class='button'>养生</a>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class='row'>
+        <div class='col-12 player-list'>
+            <a class='button primary outline'>Doinb</a>
+            <a class='button primary outline'>Lwx</a>
+            <a class='button primary outline'>Meiko</a>
+            <a class='button primary outline'>Ming</a>
+            <a class='button primary outline'>Rookie</a>
+            <a class='button primary outline'>Scout</a>
+            <a class='button primary outline'>TheShy</a>
+            <a class='button primary outline'>Xiaohu</a>
+            <a class='button primary outline'>Zoom</a>
+            
+        </div>
+    </div>
+
+    <footer class='card'>
+        <header>
+            <h4><a href='https://xovee.cn' target='_blank'>Xovee Xu</a></h4>
+        </header>
+        <p>是这个网站的创建者和维护者，如果你有任何意见或者发现了任何错误，可以发邮件到<code>xovee at live.com</code></p>
+    </footer>
+
+<script>
+    $( document ).ready(function() {
+        var gift = {
+            "音乐": ["Xiaohu", "TheShy", "Lwx"], 
+            "周边": ["Xiaohu", "Scout", "Meiko"], 
+            "饮食": ["Ming", "Rookie", "Zoom", "Doinb"]
+        };
+
+        $(".player-list a").each(function(index, element) {
+            $(this).hide();
+        });
+
+        $('.gift-list a').click(function(index, element) {
+            $('.player-list a').each(function() {$(this).hide()});
+            $('.gift-list a').each(function() {$(this).removeClass('primary')});
+            $(this).addClass('primary');
+            var currentGift = $(this).text();
+            console.log(currentGift);
+            $.each(gift[currentGift], function(index, value) {
+                $('.player-list a').each(function() {
+                    if ($(this).text() == value) {
+                        $(this).show();
+                    }
+                });
+            });
+
+        })
+
+        // $.getJSON('./data/gift.json', function(data) {
+        //     const gift = JSON.stringify(data);
+        //     alert(gift['音乐']);
+        // });
+        // alert(gift['音乐']);
+        console.log(gift['音乐']);
+    });
+</script>
+</body>
+</html>
