@@ -7,6 +7,9 @@ $( document ).ready(function() {
     $(this).addClass('active');
     var showContentId = '#' + $(this).attr('id') + 'content';
     $(showContentId).show();
+    if (showContentId == '#event-content') {
+      $('#event-input').focus();
+    }
   })
 
   
