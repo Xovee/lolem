@@ -10,7 +10,7 @@ $( document ).ready(function() {
   })
 
   
-  $('#recruit-').click();
+  $('#equipment-').click();
 
   // Start of Recruit
 
