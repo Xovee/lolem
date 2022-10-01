@@ -1,8 +1,19 @@
 {
-  "音乐": ["Xiaohu", "TheShy", "Lwx", "Elk", "JackeyLove", "Flandre", "GALA", "Fzzy", "LoveLing", "Jiejie", "Leyan", "Cryin", "ShowMaker", "Jankos"], 
-  "周边": ["Xiaohu", "Scout", "Meiko", "knight", "iBoy", "Fzzy", "WeiXiao", "Cool", "Ning", "Karsa", "Peanut", "caPs"], 
-  "饮食": ["Ming", "Rookie", "Zoom", "Doinb", "Elk", "xiye", "Cool", "Karsa", "Wei", "Cryin", "Faker", "Deft"],
-  "外设": ["Ming", "Zoom", "Doinb", "369", "knight", "Crisp", "Uzi", "Gogoing", "Bin", "LoveLing", "Ning", "Wei", "Uzi", "Faker", "caPs"], 
-  "阅读": ["Scout", "369", "iBoy", "JackeyLove", "WeiXiao", "Jiejie", "Leyan", "Peanut"], 
-  "养生": ["Meiko", "TheShy", "Rookie", "Lwx", "Crisp", "Flandre", "GALA", "Uzi", "Gogoing", "xiye", "Bin", "Uzi", "ShowMaker", "Deft", "Jankos"]
+  "选手": {
+    "音乐": ["Xiaohu", "TheShy", "Lwx", "Elk", "JackeyLove", "Flandre", "GALA", "Fzzy", "LoveLing", "Jiejie", "Leyan", "Cryin", "ShowMaker", "Jankos"], 
+    "周边": ["Xiaohu", "Scout", "Meiko", "knight", "iBoy", "Fzzy", "WeiXiao", "Cool", "Ning", "Karsa", "Peanut", "caPs"], 
+    "饮食": ["Ming", "Rookie", "Zoom", "Doinb", "Elk", "xiye", "Cool", "Karsa", "Wei", "Cryin", "Faker", "Deft"],
+    "外设": ["Ming", "Zoom", "Doinb", "369", "knight", "Crisp", "Uzi", "Gogoing", "Bin", "LoveLing", "Ning", "Wei", "Uzi", "Faker", "caPs"], 
+    "阅读": ["Scout", "369", "iBoy", "JackeyLove", "WeiXiao", "Jiejie", "Leyan", "Peanut"], 
+    "养生": ["Meiko", "TheShy", "Rookie", "Lwx", "Crisp", "Flandre", "GALA", "Uzi", "Gogoing", "xiye", "Bin", "Uzi", "ShowMaker", "Deft", "Jankos"]
+  }, 
+  "职员": {
+    "音乐": ["余霜", "Tabe", "米勒", "记得", "刘航", "maokai", "希然", "Rita", "俊日", "苏小落", "夏安"], 
+    "周边": ["王多多", "牛排", "娃娃", "管泽元", "957", "金星宇"],
+    "饮食": ["余霜", "阿布", "鼓鼓", "瞳夕"],
+    "外设": ["阿布", "刘航", "鼓鼓", "Rita", "瞳夕", "夏安"],
+    "阅读": ["王多多", "骆歆", "牛排", "小钰", "娃娃", "朱开"],
+    "养生": ["骆歆", "Tabe", "米勒", "记得", "maokai", "小钰", "希然", "管泽元", "俊日", "957", "苏小落", "朱开", "金星宇"]
+  }
+  
 }

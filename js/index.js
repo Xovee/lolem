@@ -109,22 +109,29 @@ $( document ).ready(function() {
       gift = data;
   })
 
-  $(".gift-player-list a").each(function(index, element) {
+  $(".gift-player-list a, .gift-employee-list a").each(function(index, element) {
       $(this).hide();
   });
 
   $('.gift-list a').click(function(index, element) {
-      $('.gift-player-list a').each(function() {$(this).hide()});
+      $('.gift-player-list a').add('.gift-employee-list a').each(function() {$(this).hide()});
       $('.gift-list a').each(function() {$(this).removeClass('primary')});
       $(this).addClass('primary');
       var currentGift = $(this).text();
-      $.each(gift[currentGift], function(index, value) {
+      $.each(gift['选手'][currentGift], function(index, value) {
           $('.gift-player-list a').each(function() {
               if ($(this).text() == value) {
                   $(this).show();
               }
           });
       });
+      $.each(gift['职员'][currentGift], function(index, value) {
+        $('.gift-employee-list a').each(function() {
+            if ($(this).text() == value) {
+                $(this).show();
+            }
+        });
+    });
 
   })
   // End of Gift

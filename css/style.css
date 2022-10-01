@@ -1,8 +1,4 @@
-@import url(chota.css)
-
-:root {
-    --color-primary: #blue;
-}
+/* @import url(chota.css) */
 
 nav {
     margin-bottom: 2rem;
