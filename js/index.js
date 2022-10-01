@@ -10,7 +10,7 @@ $( document ).ready(function() {
   })
 
   
-  $('#equipment-').click();
+  $('#recruit-').click();
 
   // Start of Recruit
 
@@ -99,13 +99,41 @@ $( document ).ready(function() {
     
   })
 
-
   // End of Recruit
+
+  // Start of Event
+  var event;
+  $.getJSON('./data/club-event.json', function(data) {
+    event = data;
+  })
+
+  // $('#event-').click(function() {
+  //   $('#event-table-body tr').remove();
+  //   var eventKeys = Object.keys(event);
+  //   eventKeys.sort((a, b) => (a[0] > b[0]) ? 1 : -1);
+  //   $.each(eventKeys, function(index, value) {
+  //     addRowText = '<tr><td>' + value + "</td><td>" + event[value][0] + "</td><td>" + event[value][1] + "</td></tr>";
+  //     $('#event-table-body').append(addRowText);
+  //   })
+  // })
+
+  $('#event-input').on('input', function() {
+    $('#event-table-body tr').hide();
+    var inputText = $('#event-input').val();
+    $.each(event, function(index, value) {
+      if (index.includes(inputText)) {
+        addRowText = '<tr><td>' + index + "</td><td>" + value[0] + "</td><td>" + value[1] + "</td></tr>";
+        $('#event-table-body').append(addRowText);
+      }
+    })
+  })
+  
+  // End of Event
 
   // Start of Gift
 
   var gift;
-  $.getJSON('./data/gift.json', function(data){
+  $.getJSON('./data/gift.json', function(data) {
       gift = data;
   })
 
