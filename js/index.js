@@ -107,16 +107,6 @@ $( document ).ready(function() {
     event = data;
   })
 
-  // $('#event-').click(function() {
-  //   $('#event-table-body tr').remove();
-  //   var eventKeys = Object.keys(event);
-  //   eventKeys.sort((a, b) => (a[0] > b[0]) ? 1 : -1);
-  //   $.each(eventKeys, function(index, value) {
-  //     addRowText = '<tr><td>' + value + "</td><td>" + event[value][0] + "</td><td>" + event[value][1] + "</td></tr>";
-  //     $('#event-table-body').append(addRowText);
-  //   })
-  // })
-
   $('#event-input').on('input', function() {
     $('#event-table-body tr').hide();
     var inputText = $('#event-input').val();
