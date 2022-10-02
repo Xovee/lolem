@@ -95,7 +95,10 @@ p {
 blockquote {
   background-color: var(--bg-secondary-color);
   padding: 1.5rem 2rem;
-  border-left: 3px solid var(--color-lightGrey);
+  border-left: 10px solid var(--color-primary);
+  /* margin-block-start: 0rem;
+  margin-block-end: 0rem; */
+  margin: 0px;
 }
 dl dt {
   font-weight: bold;
