@@ -13,7 +13,7 @@ $( document ).ready(function() {
   })
 
   
-  $('#prob-').click();
+  $('#recruit-').click();
 
   // Start of Recruit
 
