@@ -126,19 +126,19 @@ $( document ).ready(function() {
   // Start of Prob
   probPoolData = {
     '总决赛LPL': {
-      'SSR (22夏+22决赛)': 2.34, 'SR (22夏+22决赛)': 12.66, 'R (22夏+22决赛)': 85.0
+      'SSR': 2.34, 'SR': 12.66, 'R': 85.0
     }, 
     '友情': {
-      'SSR (22夏+22决赛)': 0.2, 'SR (22夏+22决赛)': 1.42, 'R (22夏+22决赛)': 33.33, 'N (22夏)': 65.05, 
+      'SSR': 0.2, 'SR': 1.42, 'R': 33.33, 'N': 65.05, 
     }, 
     '22世界赛': {
       'SSR': 1.67, 'SR': 12.66, 'R': 85.67, 
     }, 
     '我是冠军': {
-      '冠军卡': 0.67, 'SSR (22夏)': 1.41, 'SR (22夏+22决赛)': 14.93, 'R (22夏+22决赛)': 82.99, 
+      '冠军卡': 0.67, 'SSR': 1.41, 'SR': 14.93, 'R': 82.99, 
     }, 
     '冠军再临': {
-      '冠军卡': 1.11, 'SSR (22夏)': 1.13, 'SR (22夏+22决赛)': 13.89, 'R (22夏+22决赛)': 83.87, 
+      '冠军卡': 1.11, 'SSR': 1.13, 'SR': 13.89, 'R': 83.87, 
     }
   }
 
@@ -170,12 +170,31 @@ $( document ).ready(function() {
     return Math.pow(ssrProb, N) * Math.pow(1-ssrProb, num-N) * Number(combinations(num, N));
   }
 
-  function writeRow(pool, n, p) {
+  function writeRow(pool, n, p, cha_p) {
     let probNone = rowNone(p, n);
     let probOne = rowGetN(p, n, 1);
     let probTwo = rowGetN(p, n, 2);
     let probThree = rowGetN(p, n, 3);
     let probFourAndAbove = 1 - probNone - probOne - probTwo - probThree;
+
+    if (pool == '我是冠军') {
+      let probCha = 1 - rowNone(cha_p, n);
+      $('#prob-table tbody').append(
+        "<tr><td>" + '抽出冠军卡的概率：' + "</td><td>" + probCha.toLocaleString('en', {style: 'percent', minimumFractionDigits: 2}) + '</td></tr>'
+      )
+      $('#prob-table tbody').append(
+        "<tr><td>" + '抽到冠军卡数量的期望：' + "</td><td>" + (cha_p*n/100).toLocaleString({minimumFractionDigits: 2}) + '张</td></tr>'
+      )
+    } else if (pool == '冠军再临') {
+      let probCha = 1 - rowNone(cha_p, n);
+      $('#prob-table tbody').append(
+        "<tr><td>" + '抽出冠军卡的概率：' + "</td><td>" + probCha.toLocaleString('en', {style: 'percent', minimumFractionDigits: 2}) + '</td></tr>'
+      )
+      $('#prob-table tbody').append(
+        "<tr><td>" + '抽到冠军卡数量的期望：' + "</td><td>" + (cha_p*n/100).toLocaleString({minimumFractionDigits: 2}) + '张</td></tr>'
+      )
+    }
+
     $('#prob-table tbody').append(
       "<tr><td>" + '一个SSR也抽不出的概率：' + "</td><td>" + probNone.toLocaleString('en', {style: 'percent', minimumFractionDigits: 2}) + '</td></tr>'
     )
@@ -191,21 +210,6 @@ $( document ).ready(function() {
     $('#prob-table tbody').append(
       "<tr><td>" + '抽出四个SSR及以上的概率：' + "</td><td>" + probFourAndAbove.toLocaleString('en', {style: 'percent', minimumFractionDigits: 2}) + '</td></tr>'
     )
-    
-
-    // if (x == 'rowNone') {
-    //   rowText = '一个SSR也抽不出的概率：';
-    //   finalProb = rowNone(p, n);
-    // } else if (x == 'rowGetN') {
-    //   rowText = '抽出一个SSR的概率：';
-    //   finalProb = rowGetN(p, n);
-    // } else {
-    //   alert('wtf?!');
-    // }
-
-    // $('#prob-table tbody').append(
-    //   "<tr><td>" + rowText + "</td><td>" + finalProb.toLocaleString('en', {style: 'percent', minimumFractionDigits: 2}) + '</td></tr>'
-    // );
 
   }
 
@@ -213,9 +217,17 @@ $( document ).ready(function() {
     console.log(pool, num);
     $('#prob-table tbody tr').remove();
     if (pool == '总决赛LPL') {
-      writeRow(pool, num, probPoolData[pool]['SSR (22夏+22决赛)']);
+      writeRow(pool, num, probPoolData[pool]['SSR']);
     } else if (pool == '友情') {
-      writeRow(pool, num, probPoolData[pool]['SSR (22夏+22决赛)']);
+      writeRow(pool, num, probPoolData[pool]['SSR']);
+    } else if (pool == '22世界赛') {
+      writeRow(pool, num, probPoolData[pool]['SSR']);
+    } else if (pool == '我是冠军') {
+      writeRow(pool, num, probPoolData[pool]['SSR'] + probPoolData[pool]['冠军卡'], probPoolData[pool]['冠军卡']);
+    } else if (pool == '冠军再临') {
+      writeRow(pool, num, probPoolData[pool]['SSR'] + probPoolData[pool]['冠军卡'], probPoolData[pool]['冠军卡']);
+    } else {
+      alert('请选择卡池！');
     }
   }
 
@@ -230,6 +242,7 @@ $( document ).ready(function() {
   $('.prob-times p a').click(function() {
     $('.prob-times a').removeClass('primary');
     $(this).addClass('primary');
+    $('#prob-input-times').val('');
     poolTimes = $(this).text();
     calProb(poolSelected, poolTimes);
   })
