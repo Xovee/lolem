@@ -122,7 +122,7 @@ table.striped tr:nth-of-type(2n) {
 td,
 th {
   vertical-align: middle;
-  padding: 1.2rem 0.4rem;
+  padding: 0.8rem 0.4rem;
 }
 thead {
   border-bottom: 2px solid var(--color-lightGrey);
