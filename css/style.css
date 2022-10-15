@@ -11,3 +11,11 @@ footer {
 #prob-table td:nth-child(2) {
     text-align: end;
 }
+
+.player-prob-tag {
+    display: inline-block;
+    width: 7rem;
+    background-color: white;
+    color: black;
+    border-radius: .2rem;
+}
