@@ -254,38 +254,5 @@ $( document ).ready(function() {
 
   // End of Prob
 
-  // Start of Gift
-
-  var gift;
-  $.getJSON('./data/gift.json', function(data) {
-      gift = data;
-  })
-
-  $(".gift-player-list a, .gift-employee-list a").each(function(index, element) {
-      $(this).hide();
-  });
-
-  $('.gift-list a').click(function(index, element) {
-      $('.gift-player-list a').add('.gift-employee-list a').each(function() {$(this).hide()});
-      $('.gift-list a').each(function() {$(this).removeClass('primary')});
-      $(this).addClass('primary');
-      var currentGift = $(this).text();
-      $.each(gift['选手'][currentGift], function(index, value) {
-          $('.gift-player-list a').each(function() {
-              if ($(this).text() == value) {
-                  $(this).show();
-              }
-          });
-      });
-      $.each(gift['职员'][currentGift], function(index, value) {
-        $('.gift-employee-list a').each(function() {
-            if ($(this).text() == value) {
-                $(this).show();
-            }
-        });
-    });
-
-  })
-  // End of Gift
 
 });
