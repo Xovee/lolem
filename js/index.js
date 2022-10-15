@@ -24,16 +24,15 @@ $( document ).ready(function() {
 
   $('#recruit-reset').click(function() {
     $('.recruit-tag-list a').removeClass('primary');
-    $('.recruit-player-list div').hide();
-    $('.recruit-player-tags a').hide();
-    $('.recruit-player-tags br').hide();
-    $('.recruit-player-tags hr').hide();
+    $('.recruit-player-list div').remove();
+    $('.recruit-player-tags a').remove();
+    $('.recruit-player-tags br').remove();
   })
 
   $('.recruit-tag-list a').click(function() {
-    $('.recruit-player-list a').hide();
-    $('.recruit-player-list br').hide();
-    $('.recruit-player-list hr').hide();
+    $('.recruit-player-list div').remove();
+    $('.recruit-player-tags a').remove();
+    $('.recruit-player-tags br').remove();
     $(this).toggleClass('primary');
     var activeTags = [];
     $('.recruit-tag-list a').each(function(index, element) {
