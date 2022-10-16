@@ -10,7 +10,11 @@ Main features:
 - Card Obtaining Probability
 - Medal
 
-# Change Log
+## Screenshot
+
+![screenshot](./fig/screenshot.png)
+
+## Change Log
 
 - Oct 15, 2022: add `medal` page, remove `gift` page since the game itself shows what gifts the players/employees favorate.
 - Oct 15, 2022: optimize the hiring process of players, shows success probability. I think now it is much easier and clearer to use. 
@@ -24,18 +28,18 @@ Main features:
 
 </details>
 
-# Correction & Addition
+## Correction & Addition
 
 Though I don't think there will be any, you can create PR or email me: `xovee at ieee.org`.
 
 
-# License
+## License
 
 MIT
 
-# About Author
+## About Author
 
-- [Xovee](https://xovee.cn) played *league of legends*  (starts in 2011). 
+- [Xovee Xu](https://xovee.cn) played *league of legends*  (starts in 2011). 
 - Though he is not playing the game any more but still likes to watch the LoL matches. 
 - He previously a fan of *Invictus Gaming (IG)* since 2014. 
 - His favorate player is *TheShy*. 
