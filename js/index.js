@@ -287,13 +287,44 @@ $( document ).ready(function() {
     $(activeBpKeyTag).show();
 
   })
+  $('#bp-ban-list a').click(function() {
+    $('#bp-ban-list a').removeClass('active');
+    $(this).addClass('active');
 
-  $('.bp-key-hero-list a').click(function() {
+    $('.bp-ban-hero-list').hide();
+
+    activeBpBanTag = '#' + $(this).attr('id') + '-list';
+    
+    $(activeBpBanTag).show();
+
+  })
+  $('#bp-pick-list a').click(function() {
+    $('#bp-pick-list a').removeClass('active');
+    $(this).addClass('active');
+
+    $('.bp-pick-hero-list').hide();
+
+    activeBpPickTag = '#' + $(this).attr('id') + '-list';
+    
+    $(activeBpPickTag).show();
+
+  })
+
+  $('.bp-key-hero-list a, .bp-ban-hero-list a, .bp-pick-hero-list a').click(function() {
     $(this).toggleClass('primary');
   })
 
+  $('#bp-key-reset').click(function() {
+    $('.bp-key-hero-list a').removeClass('primary');
+  })
+  $('#bp-ban-reset').click(function() {
+    $('.bp-ban-hero-list a').removeClass('primary');
+  })
+  $('#bp-pick-reset').click(function() {
+    $('.bp-pick-hero-list a').removeClass('primary');
+  })
   
-  $('#bp-key-top').click();
+  $('#bp-key-top, #bp-ban-top, #bp-pick-top').click();
   // End of BP
 
 
