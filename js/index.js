@@ -1,8 +1,8 @@
 
 $( document ).ready(function() {
   $('.content-section').hide();
-  $('.tabs a').click(function(index, element) {
-    $('.tabs a').removeClass('active');
+  $('#page-tabs a').click(function(index, element) {
+    $('#page-tabs a').removeClass('active');
     $('.content-section').hide();
     $(this).addClass('active');
     var showContentId = '#' + $(this).attr('id') + 'content';
@@ -13,7 +13,7 @@ $( document ).ready(function() {
   })
 
   
-  $('#recruit-').click();
+  $('#bp-').click();
 
   // Start of Recruit
 
@@ -274,6 +274,27 @@ $( document ).ready(function() {
   })
 
   // End of Prob
+
+  // Start of BP
+  $('#bp-key-list a').click(function() {
+    $('#bp-key-list a').removeClass('active');
+    $(this).addClass('active');
+
+    $('.bp-key-hero-list').hide();
+
+    activeBpKeyTag = '#' + $(this).attr('id') + '-list';
+    
+    $(activeBpKeyTag).show();
+
+  })
+
+  $('.bp-key-hero-list a').click(function() {
+    $(this).toggleClass('primary');
+  })
+
+  
+  $('#bp-key-top').click();
+  // End of BP
 
 
 });

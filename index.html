@@ -27,12 +27,13 @@
     <nav class='nav'>
         <div class='nav-left'>
             <!-- <a class='brand' href='#'>Xovee</a> -->
-            <div class='tabs'>
+            <div class='tabs' id='page-tabs'>
                 <a id='recruit-'>招聘</a>
                 <a id='event-'>事件</a>
                 <a id='equipment-'>装备</a>
                 <a id='prob-'>概率</a>
                 <a id='medal-'>勋章</a>
+                <a id='bp-'>BP</a>
             </div>
         </div>
     </nav>
@@ -350,6 +351,37 @@
 
     </div>
     <!-- End of Medal -->
+
+    <!-- Start of BP -->
+    <div id='bp-content' class='content-section'>
+
+    <h2>禁选 Ban Pick</h2>
+
+    <p>随着游戏进程输入我方、敌方的英雄禁用和英雄选择，助手会实时显示可用的强克联关系。你还可以提前输入整容中选手的招牌英雄。</p>
+
+    <div class='row'>
+        <div class='col-12 card' id='bp-key-container'>
+            <p>我方选手の招牌英雄<span class='pull-right button secondary' id='bp-key-reset'>重置</span></p>
+            <nav class='tabs is-full' id='bp-key-list'>
+                <a id='bp-key-top'>上</a>
+                <a id='bp-key-jug'>野</a>
+                <a id='bp-key-mid'>中</a>
+                <a id='bp-key-bot'>下</a>
+                <a id='bp-key-sup'>辅</a>
+            </nav>
+            <div id='bp-key-top-list' class='bp-key-hero-list'>
+                <a class='button'>瑟提</a>
+                <a class='button'>诺手</a>
+            </div>
+            <div id='bp-key-jug-list' class='bp-key-hero-list'>
+                <a class='button'>猴子</a>
+                <a class='button'>蔚</a>
+                <a class='button'>盲僧</a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- End of BP -->
 
     <footer class=''>
         <blockquote>
