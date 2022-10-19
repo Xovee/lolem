@@ -206,7 +206,7 @@ $( document ).ready(function() {
       $('#prob-table tbody').append(
         "<tr><td>" + '抽到冠军卡数量的期望：' + "</td><td>" + (cha_p*n/100).toLocaleString({minimumFractionDigits: 2}) + '张</td></tr>'
       )
-    } else if (pool == '冠军再临') {
+    } else if (pool == '冠军降临') {
       let probCha = 1 - rowNone(cha_p, n);
       $('#prob-table tbody').append(
         "<tr><td>" + '抽出冠军卡的概率：' + "</td><td>" + probCha.toLocaleString('en', {style: 'percent', minimumFractionDigits: 2}) + '</td></tr>'
@@ -245,7 +245,7 @@ $( document ).ready(function() {
       writeRow(pool, num, probPoolData[pool]['SSR']);
     } else if (pool == '我是冠军') {
       writeRow(pool, num, probPoolData[pool]['SSR'] + probPoolData[pool]['冠军卡'], probPoolData[pool]['冠军卡']);
-    } else if (pool == '冠军再临') {
+    } else if (pool == '冠军降临') {
       writeRow(pool, num, probPoolData[pool]['SSR'] + probPoolData[pool]['冠军卡'], probPoolData[pool]['冠军卡']);
     } else {
       alert('请选择卡池！');
