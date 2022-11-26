@@ -13,7 +13,7 @@ $( document ).ready(function() {
   })
 
   
-  $('#bp-').click();
+  $('#recruit-').click();
 
   // Start of Recruit
 
@@ -206,15 +206,7 @@ $( document ).ready(function() {
       $('#prob-table tbody').append(
         "<tr><td>" + '抽到冠军卡数量的期望：' + "</td><td>" + (cha_p*n/100).toLocaleString({minimumFractionDigits: 2}) + '张</td></tr>'
       )
-    } else if (pool == '冠军降临') {
-      let probCha = 1 - rowNone(cha_p, n);
-      $('#prob-table tbody').append(
-        "<tr><td>" + '抽出冠军卡的概率：' + "</td><td>" + probCha.toLocaleString('en', {style: 'percent', minimumFractionDigits: 2}) + '</td></tr>'
-      )
-      $('#prob-table tbody').append(
-        "<tr><td>" + '抽到冠军卡数量的期望：' + "</td><td>" + (cha_p*n/100).toLocaleString({minimumFractionDigits: 2}) + '张</td></tr>'
-      )
-    }
+    } 
 
     $('#prob-table tbody').append(
       "<tr><td>" + '一个SSR也抽不出的概率：' + "</td><td>" + probNone.toLocaleString('en', {style: 'percent', minimumFractionDigits: 2}) + '</td></tr>'
@@ -245,8 +237,6 @@ $( document ).ready(function() {
       writeRow(pool, num, probPoolData[pool]['SSR']);
     } else if (pool == '我是冠军') {
       writeRow(pool, num, probPoolData[pool]['SSR'] + probPoolData[pool]['冠军卡'], probPoolData[pool]['冠军卡']);
-    } else if (pool == '冠军降临') {
-      writeRow(pool, num, probPoolData[pool]['SSR'] + probPoolData[pool]['冠军卡'], probPoolData[pool]['冠军卡']);
     } else {
       alert('请选择卡池！');
     }
@@ -276,69 +266,107 @@ $( document ).ready(function() {
   // End of Prob
 
   // Start of BP
-  $('#bp-key-list a').click(function() {
-    $('#bp-key-list a').removeClass('active');
-    $(this).addClass('active');
+  // $('#bp-key-list a').click(function() {
+  //   $('#bp-key-list a').removeClass('active');
+  //   $(this).addClass('active');
 
-    $('.bp-key-hero-list').hide();
+  //   $('.bp-key-hero-list').hide();
 
-    activeBpKeyTag = '#' + $(this).attr('id') + '-list';
+  //   activeBpKeyTag = '#' + $(this).attr('id') + '-list';
     
-    $(activeBpKeyTag).show();
+  //   $(activeBpKeyTag).show();
 
-  })
-  $('#bp-ban-list a').click(function() {
-    $('#bp-ban-list a').removeClass('active');
-    $(this).addClass('active');
+  // })
+  // $('#bp-ban-list a').click(function() {
+  //   $('#bp-ban-list a').removeClass('active');
+  //   $(this).addClass('active');
 
-    $('.bp-ban-hero-list').hide();
+  //   $('.bp-ban-hero-list').hide();
 
-    activeBpBanTag = '#' + $(this).attr('id') + '-list';
+  //   activeBpBanTag = '#' + $(this).attr('id') + '-list';
     
-    $(activeBpBanTag).show();
+  //   $(activeBpBanTag).show();
 
-  })
-  $('#bp-we-pick-list a').click(function() {
-    $('#bp-we-pick-list a').removeClass('active');
-    $(this).addClass('active');
+  // })
+  // $('#bp-we-pick-list a').click(function() {
+  //   $('#bp-we-pick-list a').removeClass('active');
+  //   $(this).addClass('active');
 
-    $('.bp-we-pick-hero-list').hide();
+  //   $('.bp-we-pick-hero-list').hide();
 
-    activeBpWePickTag = '#' + $(this).attr('id') + '-list';
+  //   activeBpWePickTag = '#' + $(this).attr('id') + '-list';
     
-    $(activeBpWePickTag).show();
+  //   $(activeBpWePickTag).show();
 
-  })
-  $('#bp-rival-pick-list a').click(function() {
-    $('#bp-rival-pick-list a').removeClass('active');
-    $(this).addClass('active');
+  // })
+  // $('#bp-rival-pick-list a').click(function() {
+  //   $('#bp-rival-pick-list a').removeClass('active');
+  //   $(this).addClass('active');
 
-    $('.bp-rival-pick-hero-list').hide();
+  //   $('.bp-rival-pick-hero-list').hide();
 
-    activeBpRivalPickTag = '#' + $(this).attr('id') + '-list';
+  //   activeBpRivalPickTag = '#' + $(this).attr('id') + '-list';
     
-    $(activeBpRivalPickTag).show();
+  //   $(activeBpRivalPickTag).show();
 
-  })
+  // })
 
-  $('.bp-key-hero-list a, .bp-ban-hero-list a, .bp-we-pick-hero-list a, .bp-rival-pick-hero-list a').click(function() {
-    $(this).toggleClass('primary');
-  })
+  // $('.bp-key-hero-list a, .bp-ban-hero-list a, .bp-we-pick-hero-list a, .bp-rival-pick-hero-list a').click(function() {
+  //   $(this).toggleClass('primary');
+  // })
 
-  $('#bp-key-reset').click(function() {
-    $('.bp-key-hero-list a').removeClass('primary');
-  })
-  $('#bp-ban-reset').click(function() {
-    $('.bp-ban-hero-list a').removeClass('primary');
-  })
-  $('#bp-we-pick-reset').click(function() {
-    $('.bp-we-pick-hero-list a').removeClass('primary');
-  })
-  $('#bp-rival-pick-reset').click(function() {
-    $('.bp-rival-pick-hero-list a').removeClass('primary');
-  })
+  // $('#bp-key-reset').click(function() {
+  //   $('.bp-key-hero-list a').removeClass('primary');
+  // })
+  // $('#bp-ban-reset').click(function() {
+  //   $('.bp-ban-hero-list a').removeClass('primary');
+  // })
+  // $('#bp-we-pick-reset').click(function() {
+  //   $('.bp-we-pick-hero-list a').removeClass('primary');
+  // })
+  // $('#bp-rival-pick-reset').click(function() {
+  //   $('.bp-rival-pick-hero-list a').removeClass('primary');
+  // })
   
-  $('#bp-key-top, #bp-ban-top, #bp-we-pick-top, #bp-rival-pick-top').click();
+  // $('#bp-key-top, #bp-ban-top, #bp-we-pick-top, #bp-rival-pick-top').click();
+
+  // // function calTies()
+  // var bp_data;
+  // $.getJSON('./data/bp.json', function(data) {
+  //   bp_data = data;
+
+  //   var hero_info = bp_data
+  //   var key_hero_info = ["盲僧", "冰女", "猴子", "格温"];
+  //   var key_hero_lst = ["纳尔", "巨魔", "诺手", "VN", "EZ"];
+  //   var ban_hero_lst = ["猴子"];
+  //   var we_pick_lst = ["", "猴子", "", "厄斐琉斯", "猫"];
+  //   var rival_pick_lst = ["天使", "", "瑞兹", "", ""];
+
+  //   function calTies(hero_info, key_hero_lst, ban_hero_lst, we_pick_lst, rival_pick_lst){
+  //     var we_power_lst = [];
+  //     var rival_power_lst = [];
+  //     var we_counter_lst = [];
+  //     var rival_counter_lst = [];
+  //     var we_coop_lst = [];
+  //     var rival_coop_lst = [];
+
+  //     var we_remain_positions = [0, 0, 0, 0, 0]
+  //     for (let i=0; i < 5; i++) {
+  //       if (we_pick_lst[i] == "") {
+  //         we_remain_positions[i] = 1;
+  //       }
+  //     }
+      
+
+  //   }
+
+  //   calTies(hero_info, key_hero_info, ban_hero_lst, we_pick_lst, rival_pick_lst)
+    
+  // })
+
+
+  
+
   // End of BP
 
 

@@ -1,4 +1,6 @@
-{
+import numpy as np
+
+x = {
     "纳尔": {"联动": [], "克制": ["武器", "瑟提", "卡密尔"]}, 
     "船长": {"联动": [], "克制": ["铁男", "诺手", "杰斯"]}, 
     "奥恩": {"联动": ["卡莎", "梦魇"], "克制": ["剑魔"]}, 
@@ -113,3 +115,17 @@
     "女明星": {"联动": [], "克制": ["泰坦", "璐璐"]}, 
     "芮尔": {"联动": ["女枪", "莎弥拉"], "克制": ["猫", "锤石"]}
 }
+
+pick = ["厄斐琉斯", "猫"]
+
+result_coop = []
+result_counter = []
+
+for picked_hero in pick:
+  for key, hero in x.items():
+    if picked_hero in hero['联动']:
+      result_coop.extend(hero['联动'])
+    if picked_hero in hero['克制']:
+      result_counter.extend(hero['克制'])
+
+print(set(result_coop), set(result_counter))
