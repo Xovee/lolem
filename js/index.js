@@ -152,15 +152,12 @@ $( document ).ready(function() {
     '友情': {
       'SSR': 0.2, 'SR': 1.42, 'R': 33.33, 'N': 65.05, 
     }, 
-    '22世界赛': {
-      'SSR': 1.67, 'SR': 12.66, 'R': 85.67, 
-    }, 
-    '冠军降临': {
-      '冠军卡': 1.11, 'SSR': 1.13, 'SR': 13.89, 'R': 83.87, 
-    },
     '我是冠军': {
       '冠军卡': 0.67, 'SSR': 1.41, 'SR': 14.93, 'R': 82.99, 
-    } 
+    }, 
+    '骑士再临': {
+      '冠军卡': 1.11, 'SSR': 1.13, 'SR': 13.89, 'R': 83.87, 
+    }
   }
 
   var poolSelected = '';
@@ -206,7 +203,15 @@ $( document ).ready(function() {
       $('#prob-table tbody').append(
         "<tr><td>" + '抽到冠军卡数量的期望：' + "</td><td>" + (cha_p*n/100).toLocaleString({minimumFractionDigits: 2}) + '张</td></tr>'
       )
-    } 
+    } else if (pool == '骑士再临') {
+      let probCha = 1 - rowNone(cha_p, n);
+      $('#prob-table tbody').append(
+        "<tr><td>" + '抽出冠军卡的概率：' + "</td><td>" + probCha.toLocaleString('en', {style: 'percent', minimumFractionDigits: 2}) + '</td></tr>'
+      )
+      $('#prob-table tbody').append(
+        "<tr><td>" + '抽到冠军卡数量的期望：' + "</td><td>" + (cha_p*n/100).toLocaleString({minimumFractionDigits: 2}) + '张</td></tr>'
+      )
+    }
 
     $('#prob-table tbody').append(
       "<tr><td>" + '一个SSR也抽不出的概率：' + "</td><td>" + probNone.toLocaleString('en', {style: 'percent', minimumFractionDigits: 2}) + '</td></tr>'
@@ -233,9 +238,9 @@ $( document ).ready(function() {
       writeRow(pool, num, probPoolData[pool]['SSR']);
     } else if (pool == '友情') {
       writeRow(pool, num, probPoolData[pool]['SSR']);
-    } else if (pool == '22世界赛') {
-      writeRow(pool, num, probPoolData[pool]['SSR']);
     } else if (pool == '我是冠军') {
+      writeRow(pool, num, probPoolData[pool]['SSR'] + probPoolData[pool]['冠军卡'], probPoolData[pool]['冠军卡']);
+    } else if (pool == '骑士再临') {
       writeRow(pool, num, probPoolData[pool]['SSR'] + probPoolData[pool]['冠军卡'], probPoolData[pool]['冠军卡']);
     } else {
       alert('请选择卡池！');
