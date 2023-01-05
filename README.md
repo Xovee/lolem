@@ -39,7 +39,7 @@ MIT
 
 ## About Author
 
-- [Xovee Xu](https://xovee.cn) played *league of legends*  (starts in 2011). 
+- [Xovee Xu](https://www.xoveexu.com) played *league of legends*  (starts in 2011). 
 - Though he is not playing the game any more but still likes to watch the LoL matches. 
 - He previously a fan of *Invictus Gaming (IG)* since 2014. 
 - His favorate player is *TheShy*. 
